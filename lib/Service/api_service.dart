@@ -12,9 +12,8 @@ class ApiService extends GetxController {
 
   Future<bool> checkUser(String user, String password) async {
     Get.dialog(
-      const Center(child: CircularProgressIndicator(color: Colors.purple)),
+      const Center(child: CircularProgressIndicator(color: Colors.blue)),
     );
-
     try {
       final response = await dio.get('https://ssfbhl.com/adr/urljson.php');
       final List<dynamic> data = jsonDecode(response.data);
@@ -27,8 +26,7 @@ class ApiService extends GetxController {
           if (!urlString.startsWith('http://') && !urlString.startsWith('https://')) {
             urlString = 'https://$urlString';
           }
-
-          urlValue = Uri.parse(urlString);
+          urlValue = Uri.parse("$urlString?username=${userNameCtrl.text.trim()}&password=${passwordCtrl.text.trim()}");
           return true;
         }
       }

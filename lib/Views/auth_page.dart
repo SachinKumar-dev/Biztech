@@ -32,7 +32,7 @@ class _AuthPageState extends State<AuthPage> {
           centerTitle: true,
           title: Text(
             'Biztech',
-            style: GoogleFonts.poppins(color: Colors.white, fontSize: 20),
+            style: GoogleFonts.poppins(color: Colors.white, fontSize: 26),
           ),
         ),
         body: Padding(
